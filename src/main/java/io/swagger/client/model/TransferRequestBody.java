@@ -19,6 +19,7 @@ public class TransferRequestBody  {
   private Amount amount = null;
   private Object metadata = null;
   private List<FacilitatorFeeRequest> fees = new ArrayList<FacilitatorFeeRequest>() ;
+  private Clearing clearing = null;
   private String locationHeader;
 
 
@@ -70,6 +71,17 @@ public class TransferRequestBody  {
     this.fees = fees;
   }
 
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("clearing")
+  public Clearing getClearing() {
+    return clearing;
+  }
+  public void setClearing(Clearing clearing) {
+    this.clearing = clearing;
+  }
   
 
 
@@ -91,6 +103,7 @@ public class TransferRequestBody  {
     sb.append("  amount: ").append(amount).append("\n");
     sb.append("  metadata: ").append(metadata).append("\n");
     sb.append("  fees: ").append(fees).append("\n");
+    sb.append("  clearing: ").append(clearing).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
